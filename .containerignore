@@ -1,0 +1,8 @@
+# Not needed to build the image
+node_modules
+dist
+originals
+.git
+.claude
+.DS_Store
+*.log

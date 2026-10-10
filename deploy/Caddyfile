@@ -1,0 +1,18 @@
+# Serves the built site inside the container.
+# HTTPS and the domain are handled by the main Caddy on the server, which proxies here.
+:80 {
+	root * /srv
+	encode zstd gzip
+
+	# Build files have a hash in their name, so they can be cached forever
+	@assets path /assets/*
+	header @assets Cache-Control "public, max-age=31536000, immutable"
+
+	# index.html is always revalidated, so a new deploy shows up right away
+	@html path / /index.html
+	header @html Cache-Control "no-cache"
+
+	# Single-page app: unknown paths load index.html and the router decides (404 page included)
+	try_files {path} /index.html
+	file_server
+}

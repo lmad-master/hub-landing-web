@@ -1,0 +1,9 @@
+services:
+  hub-landing-web:
+    build: .
+    image: localhost/hub-landing-web:latest
+    container_name: hub-landing-web
+    # The main Caddy proxies to <server-ip>:8080 (same pattern as the other sites on 8081/8082)
+    ports:
+      - "8080:80"
+    restart: always
