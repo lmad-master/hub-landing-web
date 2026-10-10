@@ -4,6 +4,13 @@ import 'solid-devtools';
 
 import App from './App';
 
+//Router
+import { Router, Route } from '@solidjs/router';
+
+// Pages
+import { Home, NotFound } from './pages';
+
+
 const root = document.getElementById('root');
 
 if (import.meta.env.DEV && !(root instanceof HTMLElement)) {
@@ -12,4 +19,9 @@ if (import.meta.env.DEV && !(root instanceof HTMLElement)) {
   );
 }
 
-render(() => <App />, root!);
+render(() => (
+  <Router root={App} base={import.meta.env.BASE_URL.replace(/\/$/, '')}>
+    <Route path={"/"} component={Home} />
+    <Route path={"*paramName"} component={NotFound} />
+  </Router>
+), root!);

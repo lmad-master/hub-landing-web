@@ -1,0 +1,27 @@
+.container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.canvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+
+.image img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    display: block;
+    visibility: hidden;
+}

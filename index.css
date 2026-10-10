@@ -1,0 +1,56 @@
+@import "tailwindcss";
+
+/*
+ * Site theme: change these to restyle the whole site.
+ * Components also accept these as props, e.g. charColor="var(--color-accent)".
+ */
+:root {
+    /* ---------- Fonts ---------- */
+    --font-body: system-ui, -apple-system, 'Segoe UI', sans-serif;
+    --font-display: 'Space Grotesk', system-ui, sans-serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+    /* ---------- Colors ---------- */
+    /* Backgrounds */
+    --color-bg: #0d0d0d;            /* behind everything, also the open menu */
+    --color-page: #0f0f0f;          /* the page itself */
+    --color-surface: #161616;       /* dark panels */
+    --color-surface-light: #e8e4dc; /* light panels */
+
+    /* Text */
+    --color-text: #ffffff;
+    --color-text-soft: rgba(255, 255, 255, 0.75);
+    --color-text-muted: rgba(255, 255, 255, 0.6);
+    --color-text-dark: #0f0f0f;     /* text on light panels */
+
+    /* Brand */
+    --color-accent: #00b0c6;        /* LMAD teal */
+    --color-accent-2: #ff6426;      /* orange */
+
+    /* ASCII effects */
+    --color-ascii-grid: #171717;
+    --color-ascii-char: #dadada;
+
+    --color-border: rgba(255, 255, 255, 0.1);
+
+    /* ---------- Layout ---------- */
+    --gutter: 2.5rem;               /* side spacing on desktop */
+    --gutter-mobile: 1.25rem;       /* side spacing on phones */
+    --radius: 1rem;
+    --radius-pill: 999px;
+
+    color-scheme: dark;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+}

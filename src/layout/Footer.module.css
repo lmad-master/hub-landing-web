@@ -1,0 +1,54 @@
+.footer {
+    padding: 3rem var(--gutter);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid var(--color-border);
+    color: var(--color-text-muted);
+    font-size: 0.85rem;
+    line-height: 1.6;
+}
+
+.logos {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.logos img {
+    display: block;
+    height: 48px;
+    width: auto;
+    /* Grayscale keeps the seals' detail (plain white would fill them in) */
+    filter: grayscale(1) brightness(1.6) contrast(1.1);
+    opacity: 0.8;
+}
+
+.info {
+    text-align: right;
+}
+
+.career {
+    color: var(--color-text);
+}
+
+.location {
+    margin-top: 0.5rem;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+}
+
+@media (max-width: 999px) {
+    .footer {
+        padding: 2.5rem var(--gutter-mobile);
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .info {
+        text-align: left;
+    }
+}

@@ -1,0 +1,46 @@
+.root {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+/* Own stacking context so the panels' z-index never goes above the grid */
+.panels {
+    position: absolute;
+    inset: 0;
+    isolation: isolate;
+}
+
+.panels > * {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    will-change: clip-path;
+}
+
+.panels > img,
+.panels > video {
+    object-fit: cover;
+}
+
+.grid {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.cell {
+    position: absolute;
+    background: var(--dissolve-cell-color, #ff6426);
+    color: var(--dissolve-char-color, #000);
+    visibility: hidden;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 500;
+    line-height: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
