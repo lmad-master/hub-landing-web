@@ -53,14 +53,14 @@ export const SITES: Site[] = [
         id: 'examenes',
         name: 'Exámenes',
         path: '/examenes/',
-        description: 'Consulta y presenta los exámenes de la licenciatura.',
+        description: 'Consulta los exámenes de la licenciatura.',
         enabled: true,
     },
     {
         id: 'projects-showcase',
         name: 'Projects Showcase',
         path: '/projects-showcase/',
-        description: 'Explora los proyectos creados por los estudiantes.',
+        description: 'Explora algúnos de los proyectos creados por los estudiantes.',
         enabled: true,
     },
     {

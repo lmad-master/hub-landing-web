@@ -20,7 +20,9 @@ if (import.meta.env.DEV && !(root instanceof HTMLElement)) {
 }
 
 render(() => (
-  <Router root={App} base={import.meta.env.BASE_URL.replace(/\/$/, '')}>
+  // explicitLinks: only <A> links navigate inside this app. Plain <a> links (like /examenes/,
+  // which are other apps on the same domain) do a normal page load to the other site.
+  <Router root={App} base={import.meta.env.BASE_URL.replace(/\/$/, '')} explicitLinks>
     <Route path={"/"} component={Home} />
     <Route path={"*paramName"} component={NotFound} />
   </Router>
